@@ -1,0 +1,23 @@
+﻿@model EPiServerCustomProperty.Models.Pages.HomePage
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@Model.Name</title>
+</head>
+<body>
+    <div>
+        @if (Model.CountryEmailAddresses != null)
+        {
+            <ul>
+                @foreach (var item in Model.CountryEmailAddresses)
+                {
+                    <li>@item.CountryCode - @item.EmailAddress</li>
+                }
+            </ul>
+        }
+    </div>
+</body>
+</html>

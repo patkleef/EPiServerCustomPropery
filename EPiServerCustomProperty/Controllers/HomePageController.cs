@@ -1,4 +1,7 @@
 ﻿using System.Web.Mvc;
+using EPiServer;
+using EPiServer.Core;
+using EPiServer.ServiceLocation;
 using EPiServer.Web.Mvc;
 using EPiServerCustomProperty.Models.Pages;
 
@@ -8,8 +11,15 @@ namespace EPiServerCustomProperty.Controllers
     {
         public ActionResult Index(HomePage currentPage)
         {
-            /* Implementation of action. You can create your own view model class that you pass to the view or
-             * you can pass the page type for simpler templates */
+            var contentRepository = ServiceLocator.Current.GetInstance<IContentRepository>();
+
+            if (currentPage.Pages != null)
+            {
+                foreach (var contentReference in currentPage.Pages)
+                {
+                    var page = contentRepository.Get<PageData>(contentReference);
+                }
+            }
 
             return View(currentPage);
         }

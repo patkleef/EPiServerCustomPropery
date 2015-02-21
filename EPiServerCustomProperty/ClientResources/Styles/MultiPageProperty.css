@@ -1,0 +1,24 @@
+﻿.removeButton {
+    background: #fff url("/EPiServer/Shell/7.8.2.0/ClientResources/epi/themes/sleek/form/images/icons/clearButtonIcon.png") center center no-repeat;
+    display: block;
+    height: 17px;
+    width: 21px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.selectedPagesTable {
+    margin-left: 171px;
+    margin-top: 10px;
+}
+.selectedPagesTable td {
+    color: #555;
+}
+
+.selectedPagesTable tr td:first-child {
+    border-right:1px solid #555;
+}
+
+.selectedPagesTable tr:not(:last-child) {
+    border-bottom:1px solid #555;
+}

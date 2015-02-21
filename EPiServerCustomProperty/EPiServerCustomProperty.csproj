@@ -231,15 +231,19 @@
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ItemGroup>
     <Compile Include="Business\Properties\CountryEmailAddress.cs" />
+    <Compile Include="Business\Properties\MultiPageEditorDescriptor.cs" />
     <Compile Include="Business\Properties\CountryEmailAddressEditorDescriptor.cs" />
+    <Compile Include="Business\Properties\PropertyMultiPage.cs" />
     <Compile Include="Business\Properties\PropertyCountryEmailAddress.cs" />
     <Compile Include="Business\Services\Country.cs" />
     <Compile Include="Business\Services\CountryService.cs" />
     <Compile Include="Business\Services\ICountryService.cs" />
+    <Compile Include="Controllers\ContentPageController.cs" />
     <Compile Include="Controllers\HomePageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Pages\ContentPage.cs" />
     <Compile Include="Models\Pages\HomePage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -252,7 +256,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ClientResources\scripts\Editors\CountryEmailAddressesProperty.js" />
+    <Content Include="ClientResources\scripts\Editors\MultiPageProperty.js" />
+    <Content Include="ClientResources\scripts\Editors\templates\MultiPage.html" />
     <Content Include="ClientResources\scripts\Editors\templates\CountryEmailAddresses.html" />
+    <Content Include="ClientResources\Styles\MultiPageProperty.css" />
+    <Content Include="ClientResources\Styles\remove.png" />
     <Content Include="Views\Web.config" />
     <Content Include="Global.asax" />
     <Content Include="Web.config">
@@ -267,8 +275,11 @@
     <Content Include="modules\_protected\CMS\EPiServer.Cms.Shell.UI.zip" />
     <Content Include="modules\_protected\EPiServer.Packaging.UI\web.config" />
     <Content Include="modules\_protected\EPiServer.Packaging.UI\EPiServer.Packaging.UI.zip" />
-    <Content Include="module.config" />
+    <Content Include="module.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\HomePage\Index.cshtml" />
+    <Content Include="Views\ContentPage\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

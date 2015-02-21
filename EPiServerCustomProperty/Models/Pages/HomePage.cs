@@ -18,5 +18,14 @@ namespace EPiServerCustomProperty.Models.Pages
             Order = 10)]
         [BackingType(typeof(PropertyCountryEmailAddress))]
         public virtual IEnumerable<CountryEmailAddress> CountryEmailAddresses { get; set; }
+
+        [UIHint("MultiPageProperty")]
+        [Display(
+            Name = "Pages",
+            Description = "Select multiple pages",
+            GroupName = SystemTabNames.Content,
+            Order = 20)]
+        [BackingType(typeof(PropertyMultiPage))]
+        public virtual IEnumerable<ContentReference> Pages { get; set; }
     }
 }

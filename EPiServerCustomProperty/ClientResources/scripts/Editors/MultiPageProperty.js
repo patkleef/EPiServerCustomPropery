@@ -122,6 +122,9 @@
         },
 
         _onDialogExecute: function () {
+            if (this.value == null) {
+                this.value = [];
+            }
             var contentSelectorValue = this.contentSelectorDialog.get("value");
 
             if (array.indexOf(this.value, contentSelectorValue) == -1) {
